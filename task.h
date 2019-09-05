@@ -10,6 +10,11 @@ public:
     int startTime;
     int totalTime;
     int priority;
+    int elapsedTime;
+    int waitTime;
+    int remainingTime;
+    int consecutiveCount;
+    int switchCount;
 };
 
 std::vector<Task> readTasksFromFile(std::string path);

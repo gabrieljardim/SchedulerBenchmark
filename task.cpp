@@ -36,6 +36,15 @@ std::vector<Task> readTasksFromFile(std::string path)
     for(int i = 0; priorityStream >> buff; ++i)
         taskVector[i].priority = buff;
 
+     //initialize running parameters
+    for(auto& elem : taskVector) {
+        elem.elapsedTime = 0;
+        elem.waitTime = 0;
+        elem.remainingTime = elem.totalTime;
+        elem.consecutiveCount = 0;
+        elem.switchCount = 0;
+    }
+
     return taskVector;
 
 }
